@@ -21,8 +21,11 @@ public class IceCubeBehavior : MonoBehaviour
         if (collision.gameObject.tag == "IceCube") 
         {
             Debug.Log("CUBES COLLIDING");
-            collision.gameObject.GetComponent<Transform>().SetParent(this.transform);
-            collision.gameObject.transform.rotation = gameObject.transform.rotation;
+            collision.gameObject.AddComponent<HingeJoint>();
+            collision.gameObject.GetComponent<HingeJoint>().connectedBody = gameObject.GetComponent<Rigidbody>();
+
+            //collision.gameObject.GetComponent<Transform>().SetParent(this.transform);
+            //collision.gameObject.transform.rotation = gameObject.transform.rotation;
         }
     }
 
@@ -31,7 +34,7 @@ public class IceCubeBehavior : MonoBehaviour
         if (collision.gameObject.tag == "IceCube")
         {
             Debug.Log("CUBES NOT COLLIDING");
-            collision.gameObject.GetComponent<Transform>().SetParent(null);
+         //   collision.gameObject.GetComponent<Transform>().SetParent(null);
         }
     }
 }
