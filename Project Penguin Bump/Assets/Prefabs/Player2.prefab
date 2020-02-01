@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  HorizontalMove: Horizontal
-  VerticalMove: Vertical
+  HorizontalMove: HorizontalP2
+  VerticalMove: VerticalP2
   force: 0
   maxSpeedX: 0
   maxSpeedZ: 0
