@@ -13,12 +13,15 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeedX;
     public float maxSpeedZ;
 
+    private float ignoreMaxSpeed; 
+
     // Start is called before the first frame update
     void Start()
     {
+        ignoreMaxSpeed = 0;
         rb = GetComponent<Rigidbody>();
         if (speed == 0) { speed = 1; }
-        if (force == 0) { force = 100; }
+        if (force == 0) { force = 150; }
         if (maxSpeedX == 0) { maxSpeedX = 5; }
         if (maxSpeedZ == 0) { maxSpeedZ = 5; }
     }
@@ -31,19 +34,27 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         
-        rb.AddForce(movement * speed);  
-
-        if (rb.velocity.x >= maxSpeedX) { rb.velocity = new Vector3(maxSpeedX, rb.velocity.y, rb.velocity.z); }
-        if (rb.velocity.z >= maxSpeedZ) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, maxSpeedZ); }
-        if (rb.velocity.x <= -maxSpeedX) { rb.velocity = new Vector3(-maxSpeedX, rb.velocity.y, rb.velocity.z); }
-        if (rb.velocity.z <= -maxSpeedZ) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -maxSpeedZ); }
-
+        rb.AddForce(movement * speed);
+        
+        if (ignoreMaxSpeed <= 0)
+        {
+            if (rb.velocity.x >= maxSpeedX) { rb.velocity = new Vector3(maxSpeedX, rb.velocity.y, rb.velocity.z); }
+            if (rb.velocity.z >= maxSpeedZ) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, maxSpeedZ); }
+            if (rb.velocity.x <= -maxSpeedX) { rb.velocity = new Vector3(-maxSpeedX, rb.velocity.y, rb.velocity.z); }
+            if (rb.velocity.z <= -maxSpeedZ) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -maxSpeedZ); }
+        }
+        else
+        {
+            ignoreMaxSpeed -= Time.deltaTime;
+        }
     }
 
     void OnCollisionEnter(Collision col) 
     { 
         if (col.gameObject.tag == "Player") 
         {
+            ignoreMaxSpeed = 3;
+
             Debug.Log("COLLIDING");
             // Calculate Angle Between the collision point and the player
             Vector3 dir = col.contacts[0].point - transform.position;
