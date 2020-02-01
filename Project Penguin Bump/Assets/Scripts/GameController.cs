@@ -12,18 +12,22 @@ public class GameController : MonoBehaviour
     public GameObject Player2;
     public Transform Position2;
     public CinemachineTargetGroup targetGroup;
+    public int numberOfPlayers;
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(Player, Position.position, Quaternion.identity);
-        Instantiate(Player2, Position2.position, Quaternion.identity);
+     //   for (numberOfPlayers = 2; numberOfPlayers > 0; numberOfPlayers--)
+     //   { 
+     //   }
+        GameObject createdPlayer = Instantiate(Player, Position.position, Quaternion.identity);
+        GameObject createdPlayer1 = Instantiate(Player2, Position2.position, Quaternion.identity);
 
         //        targetGroup.GetComponent<CinemachineTargetGroup>();
         targetGroup = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();
         Cinemachine.CinemachineTargetGroup.Target target;
 
-        target.target = Player.transform;
+        target.target = createdPlayer.transform;
         target.weight = 1;
         target.radius = 0;
 
