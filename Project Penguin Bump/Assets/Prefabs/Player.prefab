@@ -130,3 +130,4 @@ MonoBehaviour:
   force: 0
   maxSpeedX: 0
   maxSpeedZ: 0
+  Bomb: {fileID: 2449551171157384707, guid: aa3f8f686f706a149b93bb7c98761484, type: 3}
