@@ -37,9 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Fire1") && nextFire <= 0)
         {
-            if (firePower <= 10)
+            if (firePower <= 20)
             {
-                firePower += Time.deltaTime * 3;
+                firePower += Time.deltaTime * 10;
             }
         }
 
