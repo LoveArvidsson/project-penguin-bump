@@ -10,7 +10,7 @@ public class Explosion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (timer == 0) { timer = 0.3f; }
+        if (timer == 0) { timer = 0.1f; }
         if (Force == 0) { Force = 300;  }
     }
 

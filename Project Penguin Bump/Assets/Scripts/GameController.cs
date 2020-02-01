@@ -7,10 +7,15 @@ using Cinemachine;
 
 public class GameController : MonoBehaviour
 {
+    public int numberOfPlayers;
     public GameObject Player;
     public Transform Position;
     public GameObject Player2;
     public Transform Position2;
+    public GameObject Player3;
+    public Transform Position3;
+    public GameObject Player4;
+    public Transform Position4;
     CinemachineTargetGroup targetGroup;
 
     // Start is called before the first frame update
@@ -21,6 +26,12 @@ public class GameController : MonoBehaviour
      //   }
         GameObject createdPlayer = Instantiate(Player, Position.position, Quaternion.identity);
         GameObject createdPlayer1 = Instantiate(Player2, Position2.position, Quaternion.identity);
+
+        if (numberOfPlayers == 4) 
+        {
+            Instantiate(Player3, Position3.position, Quaternion.identity);
+            Instantiate(Player4, Position4.position, Quaternion.identity);
+        }
 
         //        targetGroup.GetComponent<CinemachineTargetGroup>();
         targetGroup = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();
