@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2017224718378345420}
   - component: {fileID: 2017224718378345421}
   - component: {fileID: 2017224718378345422}
+  - component: {fileID: -2789004548446996989}
   m_Layer: 0
   m_Name: IceCube
   m_TagString: IceCube
@@ -91,7 +92,7 @@ BoxCollider:
   m_GameObject: {fileID: 2017224718378345423}
   m_Material: {fileID: 13400000, guid: 42b7cda1c25d83147847aa5c830456b8, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1, z: 0.8}
   m_Center: {x: 0, y: 0.4, z: 0}
@@ -123,3 +124,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124de962a4a7eeb48b7b7f6b5ba99c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &-2789004548446996989
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017224718378345423}
+  m_Material: {fileID: 13400000, guid: 42b7cda1c25d83147847aa5c830456b8, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1819135274774951407, guid: 5c856290e9c51de468af1a7138e9720c, type: 3}
