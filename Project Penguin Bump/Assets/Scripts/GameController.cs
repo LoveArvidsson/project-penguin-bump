@@ -16,8 +16,11 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(Player, Position.position, Quaternion.identity);
-        Instantiate(Player2, Position2.position, Quaternion.identity);
+     //   for (numberOfPlayers = 2; numberOfPlayers > 0; numberOfPlayers--)
+     //   { 
+     //   }
+        GameObject createdPlayer = Instantiate(Player, Position.position, Quaternion.identity);
+        GameObject createdPlayer1 = Instantiate(Player2, Position2.position, Quaternion.identity);
 
         //        targetGroup.GetComponent<CinemachineTargetGroup>();
         targetGroup = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();

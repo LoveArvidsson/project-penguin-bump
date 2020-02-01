@@ -34,6 +34,15 @@ public class Explosion : MonoBehaviour
             dir.Normalize();
             other.gameObject.GetComponent<Rigidbody>().AddForce(dir * Force);
         }
+
+        if (other.gameObject.tag == "IceCube")
+        {
+            Destroy(other.gameObject.GetComponent<HingeJoint>());
+            Vector3 dir = other.transform.position - transform.position;
+            dir.Normalize();
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            other.gameObject.GetComponent<Rigidbody>().AddForce(dir * Force);
+        }
     }
 
 }
