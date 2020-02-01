@@ -3,9 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Interactive
   - DynamicParticle
+  - IceCube
+=======
+  tags: []
+>>>>>>> d5d6a781428a9349eb78add799bea5c2c9d37b09
   layers:
   - Default
   - TransparentFX
@@ -15,13 +20,8 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
   - PostProcess
   - 
-=======
-  - MetaBalls
-  - Gas
->>>>>>> 463ae00f4b94c080ecd158a1c67c5f17ea92420e
   - 
   - 
   - 

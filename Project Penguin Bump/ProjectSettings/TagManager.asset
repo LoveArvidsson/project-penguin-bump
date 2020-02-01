@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactive
   - DynamicParticle
+  - IceCube
   layers:
   - Default
   - TransparentFX
@@ -15,9 +16,9 @@ TagManager:
   - UI
   - 
   - 
-  - MetaBalls
-  - Gas
   - PostProcess
+  - 
+  - 
   - 
   - 
   - 

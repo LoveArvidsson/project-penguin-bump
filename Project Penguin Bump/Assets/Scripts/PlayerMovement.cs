@@ -8,6 +8,14 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public string HorizontalMove;
     public string VerticalMove;
+    public float force;
+
+    public float maxSpeedX;
+    public float maxSpeedZ;
+
+    private float ignoreMaxSpeed;
+
+    public GameObject Bomb;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +27,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(Bomb, gameObject.transform);
+        }
+
         float moveHorizontal = Input.GetAxis(HorizontalMove);
         float moveVertical = Input.GetAxis(VerticalMove);
 
