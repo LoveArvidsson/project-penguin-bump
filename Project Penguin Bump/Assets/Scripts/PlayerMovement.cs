@@ -26,7 +26,13 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         
-        rb.AddForce(movement * speed);
+        rb.AddForce(movement * speed);  
+
+        if (rb.velocity.x >= 5) { rb.velocity = new Vector3(5, rb.velocity.y, rb.velocity.z); }
+        if (rb.velocity.z >= 5) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 5); }
+        if (rb.velocity.x <= -5) { rb.velocity = new Vector3(-5, rb.velocity.y, rb.velocity.z); }
+        if (rb.velocity.z <= -5) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -5); }
+
     }
 
     void OnCollisionEnter(Collision col) 

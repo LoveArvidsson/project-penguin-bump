@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject Player;
+    public Transform Position;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Instantiate(Player, Position.position, Quaternion.identity);
     }
 
     // Update is called once per frame
