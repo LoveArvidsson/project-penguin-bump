@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Game Jam Menu UI Data
   m_EditorClassIdentifier: 
   buttonColorBlock:
-    m_NormalColor: {r: 0.24429998, g: 0.4237856, b: 0.698, a: 1}
-    m_HighlightedColor: {r: 0.9568628, g: 0.9333334, b: 0.19215688, a: 1}
-    m_PressedColor: {r: 0.525, g: 0.512037, b: 0.10802469, a: 1}
-    m_SelectedColor: {r: 0.95294124, g: 0.9215687, b: 0.19607845, a: 1}
-    m_DisabledColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
+    m_NormalColor: {r: 0.17765217, g: 0.44836023, b: 0.681, a: 1}
+    m_HighlightedColor: {r: 0.9568628, g: 0.92549026, b: 0.18823531, a: 1}
+    m_PressedColor: {r: 0.65199995, g: 0.6380683, b: 0.1783248, a: 1}
+    m_SelectedColor: {r: 0.9568628, g: 0.9333334, b: 0.18823531, a: 1}
+    m_DisabledColor: {r: 0.426, g: 0.426, b: 0.426, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   imageColor: {r: 0.375, g: 0.79310364, b: 1, a: 0}
