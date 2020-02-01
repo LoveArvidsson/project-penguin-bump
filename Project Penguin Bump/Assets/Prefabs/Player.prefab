@@ -128,3 +128,5 @@ MonoBehaviour:
   HorizontalMove: Horizontal
   VerticalMove: Vertical
   force: 0
+  maxSpeedX: 0
+  maxSpeedZ: 0

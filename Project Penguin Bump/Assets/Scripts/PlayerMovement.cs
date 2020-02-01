@@ -10,12 +10,17 @@ public class PlayerMovement : MonoBehaviour
     public string VerticalMove;
     public float force;
 
+    public float maxSpeedX;
+    public float maxSpeedZ;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         if (speed == 0) { speed = 1; }
         if (force == 0) { force = 100; }
+        if (maxSpeedX == 0) { maxSpeedX = 5; }
+        if (maxSpeedZ == 0) { maxSpeedZ = 5; }
     }
 
     // Update is called once per frame
@@ -28,10 +33,10 @@ public class PlayerMovement : MonoBehaviour
         
         rb.AddForce(movement * speed);  
 
-        if (rb.velocity.x >= 5) { rb.velocity = new Vector3(5, rb.velocity.y, rb.velocity.z); }
-        if (rb.velocity.z >= 5) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 5); }
-        if (rb.velocity.x <= -5) { rb.velocity = new Vector3(-5, rb.velocity.y, rb.velocity.z); }
-        if (rb.velocity.z <= -5) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -5); }
+        if (rb.velocity.x >= maxSpeedX) { rb.velocity = new Vector3(maxSpeedX, rb.velocity.y, rb.velocity.z); }
+        if (rb.velocity.z >= maxSpeedZ) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, maxSpeedZ); }
+        if (rb.velocity.x <= -maxSpeedX) { rb.velocity = new Vector3(-maxSpeedX, rb.velocity.y, rb.velocity.z); }
+        if (rb.velocity.z <= -maxSpeedZ) { rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -maxSpeedZ); }
 
     }
 
