@@ -7,35 +7,45 @@ using Cinemachine;
 
 public class GameController : MonoBehaviour
 {
+    public int numberOfPlayers;
     public GameObject Player;
     public Transform Position;
     public GameObject Player2;
     public Transform Position2;
-    public CinemachineTargetGroup targetGroup;
+    public GameObject Player3;
+    public Transform Position3;
+    public GameObject Player4;
+    public Transform Position4;
+    CinemachineTargetGroup targetGroup;
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(Player, Position.position, Quaternion.identity);
-        Instantiate(Player2, Position2.position, Quaternion.identity);
+     //   for (numberOfPlayers = 2; numberOfPlayers > 0; numberOfPlayers--)
+     //   { 
+     //   }
+        GameObject createdPlayer = Instantiate(Player, Position.position, Quaternion.identity);
+        GameObject createdPlayer1 = Instantiate(Player2, Position2.position, Quaternion.identity);
+
+        if (numberOfPlayers == 4) 
+        {
+            Instantiate(Player3, Position3.position, Quaternion.identity);
+            Instantiate(Player4, Position4.position, Quaternion.identity);
+        }
 
         //        targetGroup.GetComponent<CinemachineTargetGroup>();
         targetGroup = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();
-        Cinemachine.CinemachineTargetGroup.Target target;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
-        target.target = Player.transform;
-        target.weight = 1;
-        target.radius = 0;
-
-        for (int i = 0; i < targetGroup.m_Targets.Length; i++)
+        for (int i = 0; i < players.Length; i++)
         {
-            if (targetGroup.m_Targets[i].target == null)
-            {
-                targetGroup.m_Targets.SetValue(target, i);
-                return;
-            }
+            Cinemachine.CinemachineTargetGroup.Target target;
+            target.target = players[i].transform;
+            target.radius = 0;
+            target.weight = 1;
+
+            targetGroup.m_Targets.SetValue(target, i);
         }
-        
     }
 
     // Update is called once per frame

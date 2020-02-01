@@ -10,7 +10,7 @@ public class Explosion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (timer == 0) { timer = 0.3f; }
+        if (timer == 0) { timer = 0.1f; }
         if (Force == 0) { Force = 300;  }
     }
 
@@ -32,6 +32,15 @@ public class Explosion : MonoBehaviour
             Debug.Log("Colliding explosion and player");
             Vector3 dir = other.transform.position - transform.position;
             dir.Normalize();
+            other.gameObject.GetComponent<Rigidbody>().AddForce(dir * Force);
+        }
+
+        if (other.gameObject.tag == "IceCube")
+        {
+            Destroy(other.gameObject.GetComponent<HingeJoint>());
+            Vector3 dir = other.transform.position - transform.position;
+            dir.Normalize();
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             other.gameObject.GetComponent<Rigidbody>().AddForce(dir * Force);
         }
     }

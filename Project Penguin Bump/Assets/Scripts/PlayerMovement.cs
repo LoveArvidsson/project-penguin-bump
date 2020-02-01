@@ -10,33 +10,58 @@ public class PlayerMovement : MonoBehaviour
     public string VerticalMove;
     public float force;
 
+    public float firePower;
+    public float fireSpeed;
+
     public float maxSpeedX;
     public float maxSpeedZ;
 
     private float ignoreMaxSpeed;
 
     public GameObject Bomb;
+    public Transform bombPosition;
+
+    private float nextFire;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         if (speed == 0) { speed = 1; }
+        nextFire = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButton("Fire1") && nextFire <= 0)
         {
-            Instantiate(Bomb, gameObject.transform);
+            if (firePower <= 20)
+            {
+                firePower += Time.deltaTime * 10;
+            }
         }
+
+        if (Input.GetButtonUp("Fire1") && nextFire <= 0) 
+        {
+            GameObject bombSpawn = Instantiate(Bomb, bombPosition.transform.position, bombPosition.transform.rotation);
+            bombSpawn.GetComponent<Rigidbody>().velocity = bombPosition.transform.forward * firePower;
+            nextFire = fireSpeed;
+            firePower = 1;
+        }
+
+        if (nextFire > 0)
+        {
+            nextFire -= Time.deltaTime;
+        }
+        
 
         float moveHorizontal = Input.GetAxis(HorizontalMove);
         float moveVertical = Input.GetAxis(VerticalMove);
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        transform.rotation = Quaternion.LookRotation(movement);
 
         rb.AddForce(movement * speed);
     }

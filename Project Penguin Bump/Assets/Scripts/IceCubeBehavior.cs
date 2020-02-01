@@ -13,7 +13,6 @@ public class IceCubeBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -23,7 +22,7 @@ public class IceCubeBehavior : MonoBehaviour
             Debug.Log("CUBES COLLIDING");
             collision.gameObject.AddComponent<HingeJoint>();
             collision.gameObject.GetComponent<HingeJoint>().connectedBody = gameObject.GetComponent<Rigidbody>();
-
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
             //collision.gameObject.GetComponent<Transform>().SetParent(this.transform);
             //collision.gameObject.transform.rotation = gameObject.transform.rotation;
         }
