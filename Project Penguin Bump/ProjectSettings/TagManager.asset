@@ -7,7 +7,6 @@ TagManager:
   - Interactive
   - DynamicParticle
   - IceCube
-  - Boundry
   layers:
   - Default
   - TransparentFX

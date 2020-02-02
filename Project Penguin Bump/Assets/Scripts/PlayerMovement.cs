@@ -8,10 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public string HorizontalMove;
     public string VerticalMove;
-    public string Fire;
-    public string Jump;
-    public string Honk;
-
     public float force;
 
     public float firePower;
@@ -20,19 +16,14 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeedX;
     public float maxSpeedZ;
 
-    public float jumpSpeed;
-
     private float ignoreMaxSpeed;
 
     public GameObject Bomb;
     public Transform bombPosition;
 
     private float nextFire;
-    private bool inAir;
     private bool readyToFire;
     private float baseFirePower;
-
-    public AudioSource HonkSound;
 
     // Start is called before the first frame update
     void Start()
@@ -42,29 +33,13 @@ public class PlayerMovement : MonoBehaviour
         nextFire = 0;
         readyToFire = false;
         baseFirePower = firePower;
-        inAir = true;
-        if (jumpSpeed == 0) { jumpSpeed = 5.0f;  }
     }
     // comment
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.position.y <= 3)
-        {
-            inAir = false;
-        }
 
-        if (Input.GetButtonDown(Honk))
-        {
-            HonkSound.Play();
-        }
-
-        if (Input.GetButtonDown(Jump) && inAir == false)
-        {
-            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, jumpSpeed, 0);
-        }
-
-        if (Input.GetButton(Fire) && nextFire <= 0)
+        if (Input.GetButton("Fire1") && nextFire <= 0)
         {
             readyToFire = true;
             if (firePower <= 20)
@@ -73,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonUp(Fire) && readyToFire == true) 
+        if (Input.GetButtonUp("Fire1") && readyToFire == true) 
         {
             GameObject bombSpawn = Instantiate(Bomb, bombPosition.transform.position, bombPosition.transform.rotation);
             bombSpawn.GetComponent<Rigidbody>().velocity = bombPosition.transform.forward * firePower;
@@ -98,5 +73,4 @@ public class PlayerMovement : MonoBehaviour
         }
         rb.AddForce(movement * speed);
     }
-
 }
