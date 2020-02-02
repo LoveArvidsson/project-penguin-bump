@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 
 
 
- private Animator _animator;
+    private Animator _animator;
 
 
 
@@ -19,34 +19,30 @@ public class Movement : MonoBehaviour
 
     {
 
-_animator = GetComponent<Animator>();
-        
+        _animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
- if (_animator == null) return;
+        if (_animator == null) return;
 
-var x = Input.GetAxis("Horizontal");
-var y = Input.GetAxis("Vertical");
+        var x = Input.GetAxis("Horizontal");
+        var y = Input.GetAxis("Vertical");
 
-Move(x,y);
+        Move(x, y);
 
-
-        
     }
 
-private void Move(float x, float y)
-{
+    private void Move(float x, float y)
+    {
 
-_animator.SetFloat("VelX", x);
-_animator.SetFloat("VelY", y);
+        _animator.SetFloat("VelX", x);
+        _animator.SetFloat("VelY", y);
 
 
 
     }
-
-
 }
