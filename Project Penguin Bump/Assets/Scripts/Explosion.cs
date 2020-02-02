@@ -10,7 +10,7 @@ public class Explosion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (timer == 0) { timer = 0.1f; }
+        if (timer == 0) { timer = 1f; }
         if (Force == 0) { Force = 300;  }
     }
 
@@ -26,6 +26,7 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Destroy(gameObject.GetComponent<SphereCollider>());
 
         if (other.gameObject.tag == "Player")
         {
