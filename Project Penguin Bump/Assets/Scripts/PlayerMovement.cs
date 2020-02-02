@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform bombPosition;
 
     private float nextFire;
+    private bool readyToFire;
+    private float baseFirePower;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         if (speed == 0) { speed = 1; }
         nextFire = 0;
+        readyToFire = false;
+        baseFirePower = firePower;
     }
 
     // Update is called once per frame
@@ -37,18 +41,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Fire1") && nextFire <= 0)
         {
+            readyToFire = true;
             if (firePower <= 20)
             {
                 firePower += Time.deltaTime * 10;
             }
         }
 
-        if (Input.GetButtonUp("Fire1") && nextFire <= 0) 
+        if (Input.GetButtonUp("Fire1") && readyToFire == true) 
         {
             GameObject bombSpawn = Instantiate(Bomb, bombPosition.transform.position, bombPosition.transform.rotation);
             bombSpawn.GetComponent<Rigidbody>().velocity = bombPosition.transform.forward * firePower;
             nextFire = fireSpeed;
-            firePower = 1;
+            firePower = baseFirePower;
+            readyToFire = false;
         }
 
         if (nextFire > 0)
