@@ -8,7 +8,12 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public string HorizontalMove;
     public string VerticalMove;
+    public string Fire;
+    public string Jump;
+    public string Honk;
     public float force;
+
+    public float jumpSpeed;
 
     public float firePower;
     public float fireSpeed;
@@ -23,7 +28,10 @@ public class PlayerMovement : MonoBehaviour
 
     private float nextFire;
     private bool readyToFire;
+    private bool canJump;
     private float baseFirePower;
+
+    public AudioSource honkSound;
 
     // Start is called before the first frame update
     void Start()
@@ -33,13 +41,23 @@ public class PlayerMovement : MonoBehaviour
         nextFire = 0;
         readyToFire = false;
         baseFirePower = firePower;
+        if (jumpSpeed == 0) { jumpSpeed = 4; }
+        canJump = false;
     }
-
+    // comment
     // Update is called once per frame
     void Update()
     {
+        if (gameObject.transform.position.y < 3){ canJump = true; }
 
-        if (Input.GetButton("Fire1") && nextFire <= 0)
+        if (Input.GetButtonDown(Honk)) { honkSound.Play(); }
+
+        if (Input.GetButtonDown(Jump) && canJump == true )
+        {
+            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, jumpSpeed, 0);
+        }
+
+        if (Input.GetButton(Fire) && nextFire <= 0)
         {
             readyToFire = true;
             if (firePower <= 20)
@@ -48,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonUp("Fire1") && readyToFire == true) 
+        if (Input.GetButtonUp(Fire) && readyToFire == true) 
         {
             GameObject bombSpawn = Instantiate(Bomb, bombPosition.transform.position, bombPosition.transform.rotation);
             bombSpawn.GetComponent<Rigidbody>().velocity = bombPosition.transform.forward * firePower;
