@@ -18,6 +18,9 @@ public class GameController : MonoBehaviour
     public Transform Position4;
     CinemachineTargetGroup targetGroup;
 
+    public int TeamScore0;
+    public int TeamScore1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,15 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Reset();
+        }
+    }
+
+    void UpdateScore()
+    {
+        GameObject[] IceBergs = GameObject.FindGameObjectsWithTag("IceBerg");
+        for (int i = 0; i < IceBergs.Length; i++)
+        {
+           // TeamScore + i = IceBergs[i].transform.GetChildCount();
         }
     }
 

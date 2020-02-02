@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1071,7 +1071,7 @@ GameObject:
   - component: {fileID: 452004483}
   m_Layer: 0
   m_Name: IceBerg2
-  m_TagString: Untagged
+  m_TagString: IceBerg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5274,7 +5274,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696711575}
-  m_LocalRotation: {x: 0.29103106, y: -0.24274738, z: 0.07660469, w: 0.92222905}
+  m_LocalRotation: {x: 0.2910311, y: -0.24274743, z: 0.07660471, w: 0.92222905}
   m_LocalPosition: {x: 18.1, y: 25.770002, z: -32.000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5820,7 +5820,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808806162}
-  m_LocalRotation: {x: 0.29103106, y: -0.24274738, z: 0.07660469, w: 0.92222905}
+  m_LocalRotation: {x: 0.2910311, y: -0.24274743, z: 0.07660471, w: 0.92222905}
   m_LocalPosition: {x: 18.1, y: 25.770002, z: -32.000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
