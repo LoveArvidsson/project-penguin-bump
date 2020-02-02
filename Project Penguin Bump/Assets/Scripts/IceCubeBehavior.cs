@@ -51,6 +51,13 @@ public class IceCubeBehavior : MonoBehaviour
             //collision.gameObject.GetComponent<Transform>().SetParent(this.transform);
             //collision.gameObject.transform.rotation = gameObject.transform.rotation;
         }
+
+        if (collision.gameObject.tag == "Boundry") 
+        {
+            Vector3 dir = transform.position - collision.transform.position;
+            dir.Normalize();
+            gameObject.GetComponent<Rigidbody>().velocity = dir * 15;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
