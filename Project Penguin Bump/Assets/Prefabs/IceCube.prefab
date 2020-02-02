@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2017224718378345409}
   - component: {fileID: 2017224718378345410}
   - component: {fileID: 2017224718378345411}
-  - component: {fileID: 2017224718378345420}
   - component: {fileID: 2017224718378345421}
   - component: {fileID: 2017224718378345422}
   - component: {fileID: -2789004548446996989}
@@ -83,19 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2017224718378345420
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017224718378345423}
-  m_Material: {fileID: 13400000, guid: 42b7cda1c25d83147847aa5c830456b8, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8, y: 1, z: 0.8}
-  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!54 &2017224718378345421
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -108,7 +94,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
@@ -124,6 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124de962a4a7eeb48b7b7f6b5ba99c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graceTimer: 2
+  hingeJoints: []
+  maxSpeed: 0
+  timerTime: 0
 --- !u!64 &-2789004548446996989
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -135,6 +125,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1819135274774951407, guid: 5c856290e9c51de468af1a7138e9720c, type: 3}

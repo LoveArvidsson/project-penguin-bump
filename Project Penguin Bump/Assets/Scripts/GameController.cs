@@ -33,19 +33,7 @@ public class GameController : MonoBehaviour
             Instantiate(Player4, Position4.position, Quaternion.identity);
         }
 
-        //        targetGroup.GetComponent<CinemachineTargetGroup>();
-        targetGroup = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
-        for (int i = 0; i < players.Length; i++)
-        {
-            Cinemachine.CinemachineTargetGroup.Target target;
-            target.target = players[i].transform;
-            target.radius = 0;
-            target.weight = 1;
-
-            targetGroup.m_Targets.SetValue(target, i);
-        }
+        CameraCheck();
     }
 
     // Update is called once per frame
@@ -59,6 +47,23 @@ public class GameController : MonoBehaviour
 
     void Reset() 
     {
-        SceneManager.LoadScene("testscene");
+        SceneManager.LoadScene("Main");
+    }
+
+    public void CameraCheck() 
+    {
+        //        targetGroup.GetComponent<CinemachineTargetGroup>();
+        targetGroup = GameObject.Find("TargetGroup1").GetComponent<CinemachineTargetGroup>();
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            Cinemachine.CinemachineTargetGroup.Target target;
+            target.target = players[i].transform;
+            target.radius = 0;
+            target.weight = 1;
+
+            targetGroup.m_Targets.SetValue(target, i);
+        }
     }
 }

@@ -16,9 +16,19 @@ public class BombBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Timer -= Time.deltaTime;
+     /*   Timer -= Time.deltaTime;
 
         if (Timer <= 0)
+        {
+            Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+        */
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "IceCube")
         {
             Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
