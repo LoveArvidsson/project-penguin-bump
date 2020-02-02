@@ -246,6 +246,8 @@ MonoBehaviour:
   Position3: {fileID: 0}
   Player4: {fileID: 0}
   Position4: {fileID: 0}
+  TeamScore0: 0
+  TeamScore1: 0
 --- !u!4 &97042320
 Transform:
   m_ObjectHideFlags: 0
@@ -2114,7 +2116,7 @@ PrefabInstance:
     - target: {fileID: 11467432, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bd3b868e36f793e4dab13f5be0359d6a,
+      objectReference: {fileID: 21300000, guid: 1dfab27e1ae786247ab9cc9a286618c4,
         type: 3}
     - target: {fileID: 11467432, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_Type
@@ -2146,9 +2148,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11467570, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_Text
-      value: 'Project
+      value: '
 
-        Penguin Bump'
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467570, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467570, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467570, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11488040, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: changeScenes
@@ -2192,7 +2206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22418426, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 144
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 22418426, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2289,6 +2303,14 @@ PrefabInstance:
     - target: {fileID: 22439792, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22444764, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.543663
+      objectReference: {fileID: 0}
+    - target: {fileID: 22444764, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 28.438469
       objectReference: {fileID: 0}
     - target: {fileID: 22445276, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3318,7 +3340,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696711575}
-  m_LocalRotation: {x: 0.22772494, y: 0.06386262, z: -0.014969499, w: 0.9715137}
+  m_LocalRotation: {x: 0.22772495, y: 0.06386266, z: -0.014969508, w: 0.9715137}
   m_LocalPosition: {x: -3.61, y: 13.68, z: -27.339998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3605,7 +3627,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808806162}
-  m_LocalRotation: {x: 0.22772494, y: 0.06386262, z: -0.014969499, w: 0.9715137}
+  m_LocalRotation: {x: 0.22772495, y: 0.06386266, z: -0.014969508, w: 0.9715137}
   m_LocalPosition: {x: -3.61, y: 13.68, z: -27.339998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
