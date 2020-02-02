@@ -8,6 +8,8 @@ TagManager:
   - DynamicParticle
   - IceCube
   - Water
+  - Boundry
+  - IceBerg
   layers:
   - Default
   - TransparentFX
