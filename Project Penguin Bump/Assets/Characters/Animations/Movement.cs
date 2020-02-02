@@ -20,8 +20,7 @@ public class Movement : MonoBehaviour
 
 
     {
-        rb = GetComponentInParent<Rigidbody>();
-        coll = GetComponentInParent<CapsuleCollider>();
+        rb = GetComponentInParent<Rigidbody>()
         _animator = GetComponent<Animator>();
 
     }
