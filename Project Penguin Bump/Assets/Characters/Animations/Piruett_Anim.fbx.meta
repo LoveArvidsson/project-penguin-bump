@@ -5,23 +5,8 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Piruett
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Penguin_Rig_NYYYYYYYYYTT
-    second: {fileID: 2100000, guid: 9b9985a4e2d63d74e8ecb021c58891a6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Penguin_Rig_PenguinPlayerBandana
-    second: {fileID: 2100000, guid: 9b9985a4e2d63d74e8ecb021c58891a6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Penguin_Rig_PenguinPlayerCowboy
-    second: {fileID: 2100000, guid: 72f3299bc4b97074bad39fa3a1d19557, type: 2}
+    second: Piruett_anim
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -50,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Piruett
+      name: Piruett_anim
       takeName: Take 001
       internalID: 0
       firstFrame: 1
