@@ -13,7 +13,6 @@ public class Movement : MonoBehaviour
 
 
 
-
     // Start is called before the first frame update
     void Start()
 
@@ -42,10 +41,12 @@ Move(x,y);
 private void Move(float x, float y)
 {
 
-_animator.SetFloat("Velx", x);
+_animator.SetFloat("VelX", x);
 _animator.SetFloat("VelY", y);
 
-}
+
+
+    }
 
 
 }
