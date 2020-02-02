@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3187673778105613051}
   - component: {fileID: 3187673778105612996}
   - component: {fileID: 3187673778105613055}
+  - component: {fileID: 5099645911887035611}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -167,6 +168,22 @@ MonoBehaviour:
   maxSpeedZ: 4
   Bomb: {fileID: 2449551171157384707, guid: aa3f8f686f706a149b93bb7c98761484, type: 3}
   bombPosition: {fileID: 6126327679877467625}
+--- !u!114 &5099645911887035611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3187673778105612997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde3e805cda97ca40a0b2842eb269a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterLevel: 1.8
+  floatHeight: 1
+  buoyancyCentreOffset: {x: 0, y: 0.2, z: 0}
+  bounceDamp: 0
 --- !u!1 &6546923916990955624
 GameObject:
   m_ObjectHideFlags: 0
