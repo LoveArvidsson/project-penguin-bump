@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 
 
     private Animator _animator;
+    Rigidbody rb;
 
 
 
@@ -18,7 +19,7 @@ public class Movement : MonoBehaviour
 
 
     {
-
+        rb = GetComponentInParent<Rigidbody>();
         _animator = GetComponent<Animator>();
 
     }
@@ -33,6 +34,13 @@ public class Movement : MonoBehaviour
         var y = Input.GetAxis("Vertical");
 
         Move(x, y);
+
+        if (rb.velocity.magnitude > 10) {
+            _animator.SetBool("slide", true);
+        } else
+        {
+            _animator.SetBool("slide", false);
+        }
 
     }
 
