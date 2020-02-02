@@ -17,6 +17,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Penguin_Rig_PenguinPlayerBandana
     second: {fileID: 2100000, guid: 99e208f6ec5d70a4992b98c6ae922149, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Penguin_Rig_PenguinPlayerCowboy
+    second: {fileID: 2100000, guid: f77d2b909b79bfa49b0731621eb632c4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
