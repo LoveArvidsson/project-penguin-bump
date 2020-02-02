@@ -66,9 +66,10 @@ public class StartOptions : MonoBehaviour {
 			StartGameInScene();
 		}
 
+		SceneManager.LoadScene("P2Scene");
 	}
 
-    void OnEnable()
+	void OnEnable()
     {
         SceneManager.sceneLoaded += SceneWasLoaded;
     }

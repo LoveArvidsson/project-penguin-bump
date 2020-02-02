@@ -59,7 +59,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown(Jump) && canJump == true )
         {
-            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, jumpSpeed, 0);
+            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, jumpSpeed, gameObject.GetComponent<Rigidbody>().velocity.z);
+            canJump = false;
         }
 
         if (Input.GetButton(Fire) && nextFire <= 0)
@@ -96,5 +97,13 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(movement);
         }
         rb.AddForce(movement * speed);
+    }
+
+    void FixedUpdate()
+    {
+        if (gameObject.GetComponent<Rigidbody>().velocity.x > maxSpeedX) { gameObject.GetComponent<Rigidbody>().velocity = new Vector3(maxSpeedX, gameObject.GetComponent<Rigidbody>().velocity.y, gameObject.GetComponent<Rigidbody>().velocity.z); }
+        if (gameObject.GetComponent<Rigidbody>().velocity.x < -maxSpeedX) { gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-maxSpeedX, gameObject.GetComponent<Rigidbody>().velocity.y, gameObject.GetComponent<Rigidbody>().velocity.z); }
+        if (gameObject.GetComponent<Rigidbody>().velocity.z > maxSpeedZ) { gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, gameObject.GetComponent<Rigidbody>().velocity.y, maxSpeedZ); }
+        if (gameObject.GetComponent<Rigidbody>().velocity.z < -maxSpeedZ) { gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, gameObject.GetComponent<Rigidbody>().velocity.y, -maxSpeedZ); }
     }
 }

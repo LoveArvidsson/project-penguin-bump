@@ -155,7 +155,7 @@ Rigidbody:
   m_GameObject: {fileID: 3187673778105612997}
   serializedVersion: 2
   m_Mass: 0.45
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d36e43646fa009419ae40dd3c345e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5
   HorizontalMove: Horizontal
   VerticalMove: Vertical
   Fire: Fire1
@@ -184,8 +184,8 @@ MonoBehaviour:
   jumpSpeed: 0
   firePower: 10
   fireSpeed: 1.8
-  maxSpeedX: 4
-  maxSpeedZ: 4
+  maxSpeedX: 5
+  maxSpeedZ: 5
   Bomb: {fileID: 2449551171157384707, guid: aa3f8f686f706a149b93bb7c98761484, type: 3}
   bombPosition: {fileID: 6126327679877467625}
   honkSound: {fileID: 1275353587586974022}
