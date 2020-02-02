@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioSource honkSound;
 
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         baseFirePower = firePower;
         if (jumpSpeed == 0) { jumpSpeed = 4; }
         canJump = false;
+        anim = GetComponentInChildren<Animator>();
     }
     // comment
     // Update is called once per frame
@@ -50,7 +53,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (gameObject.transform.position.y < 3){ canJump = true; }
 
-        if (Input.GetButtonDown(Honk)) { honkSound.Play(); }
+        if (Input.GetButtonDown(Honk)) {
+            anim.SetTrigger("spin");
+            honkSound.Play(); }
 
         if (Input.GetButtonDown(Jump) && canJump == true )
         {
@@ -73,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
             nextFire = fireSpeed;
             firePower = baseFirePower;
             readyToFire = false;
+            anim.SetTrigger("throw");
         }
 
         if (nextFire > 0)
