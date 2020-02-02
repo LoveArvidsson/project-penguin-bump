@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
 
     private Animator _animator;
     Rigidbody rb;
+    CapsuleCollider coll;
 
 
 
@@ -20,6 +21,7 @@ public class Movement : MonoBehaviour
 
     {
         rb = GetComponentInParent<Rigidbody>();
+        coll = GetComponentInParent<CapsuleCollider>();
         _animator = GetComponent<Animator>();
 
     }
@@ -35,11 +37,13 @@ public class Movement : MonoBehaviour
 
         Move(x, y);
 
-        if (rb.velocity.magnitude > 10) {
-            _animator.SetBool("slide", true);
+        
+
+        if (rb.velocity.magnitude >= 4) {
+            _animator.SetBool("Swimming", true);
         } else
         {
-            _animator.SetBool("slide", false);
+            _animator.SetBool("Swimming", false);
         }
 
     }
