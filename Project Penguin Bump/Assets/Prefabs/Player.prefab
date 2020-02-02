@@ -167,7 +167,6 @@ MonoBehaviour:
   maxSpeedZ: 4
   Bomb: {fileID: 2449551171157384707, guid: aa3f8f686f706a149b93bb7c98761484, type: 3}
   bombPosition: {fileID: 6126327679877467625}
-  spawnValues: {x: 8, y: 2, z: 3}
 --- !u!1 &6546923916990955624
 GameObject:
   m_ObjectHideFlags: 0
