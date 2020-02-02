@@ -67,8 +67,10 @@ public class PlayerMovement : MonoBehaviour
         float moveVertical = Input.GetAxis(VerticalMove);
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        transform.rotation = Quaternion.LookRotation(movement);
-
+        if (movement != null)
+        {
+            transform.rotation = Quaternion.LookRotation(movement);
+        }
         rb.AddForce(movement * speed);
     }
 }
